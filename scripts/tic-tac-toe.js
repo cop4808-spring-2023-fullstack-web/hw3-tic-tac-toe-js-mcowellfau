@@ -63,6 +63,25 @@ function handleResultValidation() {
     }
 
     handlePlayerChange();
+
+    ComputerMove();
+}
+
+function ComputerMove(){
+    selectMove();
+}
+
+function selectMove(){
+
+    while(true){
+        //iterate through to find and randomly find available slot
+        m = Math.floor(Math.random()*8);
+        if (gameState[m] == '')//searching for empty spot on game board
+            break;
+    }
+
+    //m holds the the computer move
+
 }
 
 function handleCellClick(clickedCellEvent) {
