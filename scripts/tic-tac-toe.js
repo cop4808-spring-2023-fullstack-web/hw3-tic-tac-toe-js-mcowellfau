@@ -3,6 +3,7 @@ const statusDisplay = document.querySelector('.status');
 let gameActive = true;
 let currentPlayer = "";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+let trueWinCondition;
 //added variable declarations for xwin owin and draw count
 let draws = 0;
 let owin = 0;
@@ -57,7 +58,7 @@ function handlePlayerChange() {
 
 function checkWin(){
     let roundWon = false;
-    let trueWinCondition;
+    //let trueWinCondition;
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
@@ -143,7 +144,9 @@ function handleResultValidation() {
     checkWin();
     if(gameActive){
         handlePlayerChange();
+        setTimeout(() => {
         handleComputerMove();
+        },1000)
     }
 }
 
@@ -205,6 +208,9 @@ function handleRestartGame() {
         document.getElementById(m).innerHTML = computer;
         handlePlayerChange();
     }
+        document.getElementById(trueWinCondition[0]).style.backgroundColor = "White";
+        document.getElementById(trueWinCondition[1]).style.backgroundColor = "White";
+        document.getElementById(trueWinCondition[2]).style.backgroundColor = "White";
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
