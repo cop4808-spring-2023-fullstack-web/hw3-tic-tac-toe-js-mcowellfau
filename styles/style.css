@@ -5,13 +5,19 @@ body {
 }
 
 body {
-    color: rgb(65, 65, 65);
+    color: rgb(253, 249, 249);
     background-color: rgb(255, 255, 255);
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     place-items: center;
     user-select: none;
+    background-image:url('images/cyberpunk.gif');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
 }
 
 .header {
@@ -26,6 +32,7 @@ table, th, td {
     font-weight: bold; 
   }
 .container2 {
+    color:white;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
