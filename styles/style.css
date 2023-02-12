@@ -32,7 +32,7 @@ table, th, td {
     font-weight: bold; 
   }
 .container2 {
-    color:white;
+    color:white
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
