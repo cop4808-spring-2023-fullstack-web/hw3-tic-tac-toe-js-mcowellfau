@@ -24,12 +24,30 @@
     <p class="status"></p>
     <button class="restart">New Game</button>
 
-    <footer>
-      <p>MADE WITH <span id="heart">♥</span> BY 
-        <a href="https://github.com/michaelkolesidis/tic-tac-toe" target="_blank">
-        MICHAEL KOLESIDIS</a>
-      </p>
-    </footer>
+    
+      <!--Added table to display wins and draws-->
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Wins</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>X Wins:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>O Wins:</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Draws:</td>
+          <td>0</td>
+        </tr>
+        </tbody>
+      </table>
 
     <script src="./scripts/tic-tac-toe.js"></script>
   </body>

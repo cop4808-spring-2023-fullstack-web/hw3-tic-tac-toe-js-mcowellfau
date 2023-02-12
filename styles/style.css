@@ -20,7 +20,10 @@ body {
     margin-top: 2.4rem;
     margin-bottom: 0.6rem;
 }
-
+/*Added table border to display wins and draws*/
+table, th, td {
+    border: 1px solid;
+  }
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
