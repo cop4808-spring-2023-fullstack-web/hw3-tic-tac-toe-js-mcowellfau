@@ -25,7 +25,7 @@ table, th, td {
     border: 1px solid;
     font-weight: bold; 
   }
-.container {
+.container2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;

@@ -3,6 +3,7 @@ const statusDisplay = document.querySelector('.status');
 let gameActive = true;
 let currentPlayer = "";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+//variable to hold the values of the winning locations on the board
 let trueWinCondition;
 //added variable declarations for xwin owin and draw count
 let draws = 0;
