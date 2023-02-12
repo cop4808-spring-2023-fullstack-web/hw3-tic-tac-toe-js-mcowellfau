@@ -1,16 +1,34 @@
 const statusDisplay = document.querySelector('.status');
 
 let gameActive = true;
-let currentPlayer = "X";
+let currentPlayer = "";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 //added variable declarations for xwin owin and draw count
 let draws = 0;
 let owin = 0;
 let xwin = 0;
-
+//variable to computer to randomize who gets picked
+let computer = 'O'
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
+if (Math.random() > 0.5){
+    currentPlayer = "X";
+}else{
+    //loops through gamestate to select a spot to put O
+    while(true){
+        var m = Math.round(Math.random()*9)
+        if(gameState[m] == ''){
+            break;
+        }
+    }
+
+    gameState[m] = computer;
+    currentPlayer = "O";
+    document.getElementById(m).innerHTML = computer;
+    handlePlayerChange();
+}
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
@@ -134,7 +152,7 @@ function pickComputerMove(){
 
     while(true){
         //iterate through to find and randomly find available slot
-        var m = Math.floor(Math.random()*8);
+        var m = Math.round(Math.random()*9);
         if (gameState[m] == '')//searching for empty spot on game board
             break;
     }
@@ -159,11 +177,28 @@ function handleCellClick(clickedCellEvent) {
 
 function handleRestartGame() {
     gameActive = true;
-    currentPlayer = "X";
+    //currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.style.color = "rgb(65, 65, 65)";
     statusDisplay.innerHTML = currentPlayerTurn();
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+    //randomly choose first move player
+    if (Math.random() > 0.5){
+        currentPlayer = "X";
+    }else{
+        //loops through gamestate to select a spot to put O
+        while(true){
+            var m = Math.round(Math.random()*9)
+            if(gameState[m] == ''){
+                break;
+            }
+        }
+    
+        gameState[m] = computer;
+        currentPlayer = "O";
+        document.getElementById(m).innerHTML = computer;
+        handlePlayerChange();
+    }
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
