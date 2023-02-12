@@ -57,6 +57,7 @@ function handlePlayerChange() {
 
 function checkWin(){
     let roundWon = false;
+    let trueWinCondition;
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
@@ -67,12 +68,16 @@ function checkWin(){
         }
         if (a === b && b === c) {
             roundWon = true;
-            break
+            trueWinCondition = winCondition;
+            break;
         }
     }
 
     if (roundWon) {
         statusDisplay.innerHTML = winningMessage();
+        document.getElementById(trueWinCondition[0]).style.backgroundColor = "Green";
+        document.getElementById(trueWinCondition[1]).style.backgroundColor = "Green";
+        document.getElementById(trueWinCondition[2]).style.backgroundColor = "Green";
         gameActive = false;
         //let xwin = 0;
         //let owin = 0;
@@ -143,6 +148,7 @@ function handleResultValidation() {
 }
 
 function handleComputerMove(){
+    //setTimeout(pickComputerMove,500);
     pickComputerMove();
     if (!checkWin())
         handlePlayerChange();
