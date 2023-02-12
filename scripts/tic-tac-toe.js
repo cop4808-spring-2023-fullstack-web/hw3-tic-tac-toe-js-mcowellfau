@@ -31,6 +31,8 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 }
 
 function handlePlayerChange() {
+    //this.firstPlayer = Math.random() > 0.5 ? "X" : "O";
+    //currentPlayer = this.firstPlayer;
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
 }
