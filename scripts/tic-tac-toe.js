@@ -3,6 +3,10 @@ const statusDisplay = document.querySelector('.status');
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+//added variable declarations for xwin owin and draw count
+let draws = 0;
+let owin = 0;
+let xwin = 0;
 
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
@@ -50,6 +54,16 @@ function checkWin(){
     if (roundWon) {
         statusDisplay.innerHTML = winningMessage();
         gameActive = false;
+        //let xwin = 0;
+        //let owin = 0;
+        //if statement branch keeps track of o and x wins
+        if (currentPlayer == "X" && gameActive == false ){
+            xwin += 1;
+            document.getElementById('xwin').innerHTML = xwin;
+        }else if(currentPlayer == "O" && gameActive == false){
+            owin += 1;
+            document.getElementById('owin').innerHTML = owin;
+        }
         statusDisplay.style.color = "rgb(251,100,204)";
         return roundWon;
     }
@@ -58,6 +72,12 @@ function checkWin(){
     if (roundDraw) {
         statusDisplay.innerHTML = drawMessage();
         gameActive = false;
+        //let draws = 0;
+        //if statement keeps track of draws
+        if (gameActive == false){
+            draws += 1;
+            document.getElementById('draws').innerHTML = draws;
+        }
         statusDisplay.style.color = "rgb(251,100,204)";
         return roundDraw;
     }

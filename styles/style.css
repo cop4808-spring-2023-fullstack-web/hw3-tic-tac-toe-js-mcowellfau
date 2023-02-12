@@ -23,6 +23,7 @@ body {
 /*Added table border to display wins and draws*/
 table, th, td {
     border: 1px solid;
+    font-weight: bold; 
   }
 .container {
     display: grid;
