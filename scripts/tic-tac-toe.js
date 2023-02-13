@@ -189,7 +189,7 @@ function handleRestartGame() {
     gameActive = true;
     //currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.style.color = "rgb(65, 65, 65)";
+    statusDisplay.style.color = "rgb(255, 255, 255)";
     statusDisplay.innerHTML = currentPlayerTurn();
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
     //randomly choose first move player
@@ -209,9 +209,9 @@ function handleRestartGame() {
         document.getElementById(m).innerHTML = computer;
         handlePlayerChange();
     }
-        document.getElementById(trueWinCondition[0]).style.backgroundColor = "White";
-        document.getElementById(trueWinCondition[1]).style.backgroundColor = "White";
-        document.getElementById(trueWinCondition[2]).style.backgroundColor = "White";
+        document.getElementById(trueWinCondition[0]).style.backgroundColor = "Black";
+        document.getElementById(trueWinCondition[1]).style.backgroundColor = "Black";
+        document.getElementById(trueWinCondition[2]).style.backgroundColor = "Black";
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));

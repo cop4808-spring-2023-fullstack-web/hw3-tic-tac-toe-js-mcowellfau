@@ -5,14 +5,14 @@ body {
 }
 
 body {
-    color: rgb(253, 249, 249);
+    color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     place-items: center;
     user-select: none;
-    background-image:url('images/cyberpunk.gif');
+    background-image:url('images/cyberpunkk.gif');
     background-size:100%;
     background-repeat: repeat-y;
     background-attachment: fixed;
@@ -31,8 +31,9 @@ table, th, td {
     border: 1px solid;
     font-weight: bold; 
   }
-.container2 {
-    color:white
+
+  .container2 {
+    color:rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
@@ -42,7 +43,7 @@ table, th, td {
 .cell {
     width: 6rem;
     height: 6rem;
-    border: 6px solid rgb(65, 65, 65);
+    border: 6px solid rgb(160, 2, 252);
     margin: -6px 0 0 -6px;
     text-align: center;
     vertical-align: middle;
@@ -54,18 +55,18 @@ table, th, td {
 
 a {
     text-decoration: underline;
-    color: black;
+    color: rgb(255, 249, 249);
 }
 
 a:visited {
-    color: black;
+    color: rgb(252, 244, 244);
 }
 
 /*************************************/
 /******        Game Status       *****/
 /*************************************/
 .status {
-    color: rgb(65, 65, 65);
+    color: rgb(255, 253, 253);
     /* color: orangered; */
     font-size: 1.2rem;
     font-weight: 600;
@@ -89,7 +90,7 @@ a:visited {
 }
 
 .restart:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(243, 240, 240);
     background-color: rgb(185, 185, 185);
     box-shadow: 0 5px 15px rgba(167, 167, 167, 0.4);
 
